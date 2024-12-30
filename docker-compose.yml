@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  light_node:
+    image: sophonhub/sophon-light-node:latest
+    restart: on-failure:5
+    environment:
+      - OPERATOR_ADDRESS=${OPERATOR_ADDRESS:?OPERATOR_ADDRESS is required}
+      - DESTINATION_ADDRESS=${DESTINATION_ADDRESS:?DESTINATION_ADDRESS is required}
+      - PERCENTAGE=${PERCENTAGE:?PERCENTAGE is required}
+      - PUBLIC_DOMAIN=${PUBLIC_DOMAIN:?PUBLIC_DOMAIN is required}
+    ports:
+      - "${PORT:-7007}:7007"
