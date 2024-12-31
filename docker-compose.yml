@@ -4,6 +4,7 @@ services:
     image: sophonhub/sophon-light-node:latest
     restart: on-failure:5
     environment:
+      - AUTO_UPGRADE=${AUTO_UPGRADE:?AUTO_UPGRADE is missing}
       - OPERATOR_ADDRESS=${OPERATOR_ADDRESS:?OPERATOR_ADDRESS is required}
       - DESTINATION_ADDRESS=${DESTINATION_ADDRESS:?DESTINATION_ADDRESS is required}
       - PERCENTAGE=${PERCENTAGE:?PERCENTAGE is required}
