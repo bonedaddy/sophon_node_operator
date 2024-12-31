@@ -8,6 +8,5 @@ services:
       - DESTINATION_ADDRESS=${DESTINATION_ADDRESS:?DESTINATION_ADDRESS is required}
       - PERCENTAGE=${PERCENTAGE:?PERCENTAGE is required}
       - PUBLIC_DOMAIN=${PUBLIC_DOMAIN:?PUBLIC_DOMAIN is required}
-      - AUTO_UPGRADE=true
     ports:
       - "${PORT:-7007}:7007"
