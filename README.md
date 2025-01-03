@@ -18,3 +18,12 @@ $> ./operator.sh start
 ```shell
 $> ./operator.sh logs
 ```
+
+# Updating
+
+* pulls in latest docker image
+* recreates docker container
+
+```shell
+$> ./operator update
+```

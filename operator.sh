@@ -16,6 +16,7 @@ usage() {
     echo "Usage: $0 [start|logs]"
     echo "  start - Start the node"
     echo "  logs  - Show node logs"
+    echo "  update - pull new docker image and update"
     exit 1
 }
 
@@ -30,7 +31,13 @@ case "$1" in
         docker-compose up -d
         ;;
     "logs")
-        docker-compose logs
+        docker-compose logs --tail 100
+        ;;
+    "update")
+        docker image pull sophonhub/sophon-light-node:latest
+        docker-compose stop
+        docker-compose rm -f
+        docker-compose up -d
         ;;
     *)
         usage
